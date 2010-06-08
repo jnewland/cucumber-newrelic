@@ -17,7 +17,6 @@ tmtags
 coverage
 rdoc
 pkg
-*.gemspec
 
 ## PROJECT::SPECIFIC
 config/newrelic.yml
