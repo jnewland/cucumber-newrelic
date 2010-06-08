@@ -21,11 +21,7 @@ module Cucumber
 
     def self.new_relic_metric(name)
       new_relic_values.find { |v| v.name.downcase == name.to_s.downcase }.metric_value
-    rescue
-      0
     end
-
-  protected
 
     def self.new_relic_application
       if self.new_relic_application_id
@@ -34,6 +30,8 @@ module Cucumber
         @application ||= NewRelicApi::Account.find(:first).applications.first
       end
     end
+
+  protected
 
     def self.new_relic_values
       @values ||= new_relic_application.threshold_values

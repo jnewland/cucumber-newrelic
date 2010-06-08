@@ -9,5 +9,5 @@ When /^a scenario runs$/ do
 end
 
 Then /^the NewRelic API is responsive$/ do
-  Cucumber::Newrelic.new_relic_metric('apdex').should > 0
+  Then 'that my application is being monitored by New Relic'
 end

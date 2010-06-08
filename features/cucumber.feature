@@ -8,3 +8,19 @@ Feature: Setup
   Scenario: Installing the gem
     When a scenario runs
     Then the NewRelic API is responsive
+
+  Scenario: Less than
+    Given that my application is being monitored by New Relic
+    Then my application's 'response time' should be less than 500 milliseconds
+
+  Scenario: Equal
+    Given that my application is being monitored by New Relic
+    Then my application's 'apdex' should be 1
+
+  Scenario: Greater than
+    Given that my application is being monitored by New Relic
+    Then my application's 'apdex' should be greater than 0.5
+
+  Scenario: Not equal
+    Given that my application is being monitored by New Relic
+    Then my application's 'apdex' should not be 0

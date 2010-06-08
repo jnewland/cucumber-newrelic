@@ -2,17 +2,51 @@
 
 Cucumber steps for verifying New Relic Application Metrics. 
 
-==
+== Usage
+
+In your <tt>features/support/env.rb</tt>:
+
+    require 'cucumber/nagios/steps'
+
+You can now write crazy features like this:
+
+    Feature: Response Time
+      As a impatient user
+      Our app should be super fast
+
+      Background:
+        Given my NewRelic license key is 'sekret'
+
+      Scenario: Average Response time
+        Given that my application is being monitored by New Relic
+        Then my application's 'response time' should be less than 500 milliseconds
+
+      Scenario: Apdex
+        Given that my application is being monitored by New Relic
+        Then my application's 'apdex' should be 1
 
 == Available Metrics
 
     ["Apdex", "Application Busy", "CPU", "Memory", "Errors", "Error Rate", "Response Time", "Throughput", "DB"]
 
+== Available Operators
+
+* be greater than
+* be less than
+* equal OR be
+* not equal OR not be
+
+== Running Cucumber Features
+
+Drop your license key into config/newrelic.yml, then run 'em like so:
+
+    cucumber features
+
 == Note on Patches/Pull Requests
 
 * Fork the project.
 * Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
+* Add cucumber features for it. This is important so I don't break it in a
   future version unintentionally.
 * Commit, do not mess with rakefile, version, or history.
   (if you want to have your own version, that is fine but bump version in a

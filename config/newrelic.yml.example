@@ -1,0 +1,4 @@
+common: &default_settings
+  license_key: 'sekret'
+production:
+  <<: *default_settings
