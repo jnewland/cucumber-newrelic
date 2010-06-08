@@ -4,9 +4,13 @@ Cucumber steps for verifying New Relic Application Metrics.
 
 == Usage
 
+Install the gem:
+
+    gem install cucumber-newrelic
+
 In your <tt>features/support/env.rb</tt>:
 
-    require 'cucumber/nagios/steps'
+    require 'cucumber/newrelic/steps'
 
 You can now write crazy features like this:
 
