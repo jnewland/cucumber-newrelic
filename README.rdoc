@@ -10,7 +10,7 @@ Install the gem:
 
 In your <tt>features/support/env.rb</tt>:
 
-    require 'cucumber/newrelic/steps'
+    require 'cucumber/newrelic'
 
 You can now write crazy features like this:
 

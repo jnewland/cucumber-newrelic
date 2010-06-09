@@ -41,4 +41,4 @@ module Cucumber
 end
 
 World(Cucumber::Newrelic)
-require 'cucumber/nagios/steps'
+require 'cucumber/newrelic/steps'

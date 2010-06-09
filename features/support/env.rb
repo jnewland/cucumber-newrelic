@@ -1,1 +1,1 @@
-require File.join(Dir.pwd, 'lib', 'cucumber', 'newrelic', 'steps.rb')
+require File.join(Dir.pwd, 'lib', 'cucumber', 'newrelic.rb')
